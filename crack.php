@@ -216,7 +216,7 @@
     function printPreamble($wordlist, $start_line, $hash_str, $hash_type,  $left_salt, 
                     $right_salt, $output_file)
     {
-        echo "Defuse Cyber-Security's Hash Cracking Script - " . VERSION . "\n";
+        echo "Defuse Security's Hash Cracking Script - " . VERSION . "\n";
         echo "Homepage: " . DEFUSE_URL . "\n\n";
 
         $now = date("F j, Y, g:i a");
@@ -417,9 +417,9 @@
             $args['wordlist'] = $params[1];
             $args['start_line'] = (int)$params[2];
             $args['hash_type'] = $params[3];
-            $args['hash_str'] = hex2bin($params[4]);
-            $args['left_salt'] = hex2bin($params[5]);
-            $args['right_salt'] = hex2bin($params[6]);
+            $args['hash_str'] = myhex2bin($params[4]);
+            $args['left_salt'] = myhex2bin($params[5]);
+            $args['right_salt'] = myhex2bin($params[6]);
             $args['output_file'] = $opts['f'];
             return $args;
         }
@@ -492,7 +492,7 @@
         return $crypt;
     }
 
-    function hex2bin($hex)
+    function myhex2bin($hex)
     {
         return pack("H*", $hex);
     }
